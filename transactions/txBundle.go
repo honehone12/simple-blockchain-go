@@ -30,6 +30,6 @@ func (b *TxBundle) HashTransactions() ([]byte, error) {
 
 func (b *TxBundle) SortTransactions() {
 	slices.SortFunc(b.Transactions, func(a, b Transaction) bool {
-		return a.InnerData.Nonce <= b.InnerData.Nonce
+		return a.InnerData.Nonce < b.InnerData.Nonce
 	})
 }
